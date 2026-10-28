@@ -1,0 +1,6 @@
+{
+  "name": "Marido de Aluguel em Ribeirão Preto",
+  "description": "Serviços de marido de aluguel em Ribeirão Preto para consertos, instalações e pequenos reparos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

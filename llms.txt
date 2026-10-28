@@ -1,0 +1,41 @@
+# Marido de Aluguel em Ribeirão Preto
+
+Portal de contato para serviços de marido de aluguel, pequenos reparos, instalações e manutenções residenciais e comerciais em Ribeirão Preto, SP.
+
+## Serviços Disponíveis
+
+- [Instalação e montagem](https://maridodealuguelribeiraopreto.vercel.app/servicos/instalacao-e-montagem/): Fixação de suportes de TV, prateleiras, cortinas, varais e montagem ou desmontagem de móveis e armários. O serviço inclui furação correta para cada tipo de parede.
+- [Pequenos reparos elétricos e hidráulicos](https://maridodealuguelribeiraopreto.vercel.app/servicos/pequenos-reparos-eletricos-e-hidraulicos/): Troca de torneiras, reparo de descargas, substituição de chuveiros, tomadas, interruptores e luminárias. Manutenções pontuais que mantêm as instalações funcionando com segurança.
+- [Consertos e reparos gerais](https://maridodealuguelribeiraopreto.vercel.app/servicos/consertos-e-reparos-gerais/): Ajuste de portas e gavetas, troca de fechaduras, conserto de maçanetas e pequenos reparos do dia a dia. Solução prática para pendências e manutenção da casa.
+
+## Bairros Atendidos em Ribeirão Preto
+
+- [Centro](https://maridodealuguelribeiraopreto.vercel.app/bairros/centro/): Atendimento em residências, condomínios tradicionais e salas comerciais na região central.
+- [Jardim Botânico](https://maridodealuguelribeiraopreto.vercel.app/bairros/jardim-botanico/): Instalações e manutenções em apartamentos, condomínios verticais e casas.
+- [Nova Aliança](https://maridodealuguelribeiraopreto.vercel.app/bairros/nova-alianca/): Montagem, fixações e consertos rápidos em imóveis residenciais e universitários.
+- [Vila Tibério](https://maridodealuguelribeiraopreto.vercel.app/bairros/vila-tiberio/): Manutenção periódica, reparos elétricos e hidráulicos em casas e sobrados.
+- [Bonfim Paulista](https://maridodealuguelribeiraopreto.vercel.app/bairros/bonfim-paulista/): Atendimento para condomínios fechados, casas e comércios no distrito.
+- [Campos Elíseos](https://maridodealuguelribeiraopreto.vercel.app/bairros/campos-eliseos/): Consertos gerais, ajustes e trocas de peças em imóveis tradicionais da zona norte.
+
+## Informações Institucionais
+
+- [Sobre o portal](https://maridodealuguelribeiraopreto.vercel.app/sobre/)
+- [Dúvidas frequentes](https://maridodealuguelribeiraopreto.vercel.app/perguntas-frequentes/)
+- [Política de privacidade](https://maridodealuguelribeiraopreto.vercel.app/politica-de-privacidade/)
+
+## Perguntas Frequentes
+
+### O prestador fornece os materiais ou devo comprar antes?
+O prestador leva ferramentas e insumos comuns como buchas e parafusos básicos. Peças específicas como torneiras, chuveiros, lâmpadas, suportes ou tintas devem ser adquiridas pelo cliente ou combinadas previamente no atendimento.
+
+### Posso juntar vários pequenos consertos em um único atendimento?
+Sim. É muito comum montar uma lista com tudo o que precisa ser feito na casa, como trocar uma torneira, pendurar prateleiras e fixar um quadro, para resolver tudo em uma única visita.
+
+### Como sei se o serviço cabe a um marido de aluguel ou a uma grande reforma?
+O marido de aluguel é indicado para manutenções pontuais, consertos rápidos, montagens e instalações do dia a dia. Reformas pesadas, troca completa de fiação ou quebra de alvenaria exigem projetos de obra maiores. Na dúvida, consulte o prestador pelo WhatsApp.
+
+### É possível orçar por foto ou vídeo?
+Sim. Enviar fotos e vídeos curtos do que precisa ser consertado ou do local da instalação ajuda o prestador a entender a complexidade e agilizar o valor.
+
+### Como peço o orçamento?
+Clique em WhatsApp ou Ligue agora e informe o seu bairro em Ribeirão Preto, descreva os consertos ou envie fotos do que precisa ser feito. O valor e a disponibilidade são passados na conversa.

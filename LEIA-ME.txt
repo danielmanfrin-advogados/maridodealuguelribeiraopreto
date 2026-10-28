@@ -1,0 +1,80 @@
+======================================================================
+PORTAL: Marido de Aluguel em Ribeirão Preto
+Domínio Vercel: https://maridodealuguelribeiraopreto.vercel.app/
+======================================================================
+
+Este projeto é um site estático multipágina de alta performance desenvolvido
+para captação de contatos (leads) de serviços locais em Ribeirão Preto - SP.
+
+Toda a estrutura foi otimizada para SEO local e GEO (mecanismos de busca de IA como
+ChatGPT, Gemini, Perplexity e Google AI Overviews).
+
+----------------------------------------------------------------------
+1. COMO TROCAR O NÚMERO DE WHATSAPP E TELEFONE
+----------------------------------------------------------------------
+Para redirecionar os contatos para um novo prestador parceiro:
+1. Abra o arquivo config.js na raiz do projeto.
+2. Localize as chaves "whatsapp" e "telefone".
+3. Altere os números (apenas dígitos, com código do país 55 e DDD 16).
+   Exemplo:
+   whatsapp: "5516999998888",
+   telefone: "5516999998888"
+4. Salve o arquivo. Todos os botões e links de todas as 13 páginas serão
+   atualizados automaticamente na próxima visita.
+
+----------------------------------------------------------------------
+2. COMO CONFIGURAR A PLANILHA DO GOOGLE (APPS SCRIPT)
+----------------------------------------------------------------------
+Os cliques nos botões do site são registrados automaticamente em uma planilha:
+1. Crie ou abra sua planilha no Google Planilhas.
+2. No menu superior, clique em "Extensões" > "Apps Script".
+3. Apague qualquer código existente no editor e cole todo o conteúdo do arquivo
+   apps-script/Code.gs deste projeto.
+4. No menu suspenso de funções, selecione "setup" e clique em "Executar".
+   Isso criará automaticamente o cabeçalho padronizado da aba "Cliques" e a aba "Resumo".
+   (Caso já existissem dados no formato antigo, execute também "migrarLinhasAntigas").
+5. No canto superior direito, clique em "Implantar" > "Gerenciar implantações".
+6. Clique no ícone de lápis para editar a implantação ativa, selecione "Nova versão"
+   e mantenha o acesso como "Qualquer pessoa" (Anyone).
+7. Clique em "Implantar". A URL de webhook terminará em /exec.
+8. Para conferir se está ativo, abra a URL /exec no navegador; ela exibirá "ok v2".
+9. Caso crie uma nova planilha, copie a URL gerada e atualize o campo "endpoint" em config.js.
+
+Relatório por site com Tabela Dinâmica:
+1. Na sua planilha, clique em "Inserir" > "Tabela dinâmica".
+2. Em Linhas, adicione o campo "Site".
+3. Em Colunas, adicione o campo "Botão".
+4. Em Valores, adicione "Botão" com a função CONT.VALORES.
+
+----------------------------------------------------------------------
+3. IMAGENS DO SITE E FOTOS REAIS
+----------------------------------------------------------------------
+As imagens atuais na pasta img/ são ilustrativas e realistas, sem poses artificiais.
+Quando o prestador de serviços parceiro fornecer fotos reais de trabalhos realizados:
+1. Renomeie as fotos reais para os mesmos nomes dos arquivos:
+   - img/hero.jpg (foto horizontal de capa, 1600x900)
+   - img/sobre.jpg (foto institucional, proporção 4:3)
+   - img/instalacao-e-montagem.jpg (4:3)
+   - img/pequenos-reparos-eletricos-e-hidraulicos.jpg (4:3)
+   - img/consertos-e-reparos-gerais.jpg (4:3)
+2. Substitua os arquivos na pasta img/. O site atualizará sem necessidade de mexer no HTML.
+Os prompts originais utilizados estão registrados no arquivo img/PROMPTS.txt.
+
+----------------------------------------------------------------------
+4. INDEXAÇÃO NO GOOGLE SEARCH CONSOLE E SITEMAP
+----------------------------------------------------------------------
+1. Acesse o Google Search Console (https://search.google.com/search-console).
+2. Adicione a propriedade com o domínio do seu site (ex.: https://maridodealuguelribeiraopreto.vercel.app/).
+3. No menu lateral, acerte a verificação e clique em "Sitemaps".
+4. Digite "sitemap.xml" no campo de envio e clique em Enviar.
+5. O Google indexará todas as 13 páginas (página inicial, 3 serviços, 6 bairros e institucionais).
+
+----------------------------------------------------------------------
+5. GOOGLE MEU NEGÓCIO (PERFIL DA EMPRESA NO GOOGLE)
+----------------------------------------------------------------------
+Quando houver um prestador com endereço comercial ou ponto de atendimento em
+Ribeirão Preto, crie um perfil no Google Meu Negócio:
+1. Acesse https://www.google.com/business/.
+2. Cadastre o nome comercial e categoria "Faz-tudo" / "Marido de Aluguel".
+3. Adicione a área de cobertura (Ribeirão Preto e bairros atendidos).
+4. Insira o link do site e o telefone de contato correspondente ao config.js.

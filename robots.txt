@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maridodealuguelribeiraopreto.vercel.app/sitemap.xml

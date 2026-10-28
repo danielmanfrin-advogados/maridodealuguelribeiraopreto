@@ -1,0 +1,17 @@
+# Prompts das imagens ilustrativas do portal Marido de Aluguel em Ribeirão Preto
+# Caso queira gerar ou substituir fotos, utilize imagens reais dos serviços ou gere com os prompts abaixo:
+
+hero.jpg (1600x900):
+Amateur realistic smartphone photo of an open tool bag with cordless drill, spirit level, measuring tape and screwdrivers on a residential apartment floor, natural window light, candid everyday home repair scene, no people faces, no logos, no text.
+
+sobre.jpg (1000x750, 4:3):
+Realistic amateur smartphone photo of everyday hand tools, box of screws and wall anchors resting on a wooden side table in an apartment, soft daylight, genuine domestic maintenance scene, no faces, no text.
+
+instalacao-e-montagem.jpg (1000x750, 4:3):
+Realistic smartphone photo of a TV wall bracket mounted onto an apartment wall, small magnetic spirit level on bracket, cordless driver nearby on shelf, natural room lighting, no faces, no text.
+
+pequenos-reparos-eletricos-e-hidraulicos.jpg (1000x750, 4:3):
+Realistic smartphone photo of a kitchen sink faucet maintenance, chrome pipes, adjustable wrench resting on counter, natural ambient daylight, no faces, no logos, no text.
+
+consertos-e-reparos-gerais.jpg (1000x750, 4:3):
+Realistic smartphone photo of a wooden door lock mechanism and brass handle maintenance, screwdriver on table, authentic home repair setting, natural indoor light, no faces, no logos.
