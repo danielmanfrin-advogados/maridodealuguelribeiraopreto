@@ -17,5 +17,4 @@ window.SITE_CONFIG = {
   // Se preenchido com a URL do script do Google Sheets, receberá os eventos de clique
   webhookUrl: "https://script.google.com/macros/s/AKfycbzNOf1W0H8qo7UEY0AGEyLIF3ksLYgj2YELKy9OytgORZ_3Zs6PmRGl_a2p9w-myqdnlg/exec",
   trackingToken: "479479",
-
 };
