@@ -48,8 +48,11 @@
   }
 
   function registrar(acao, local, detalhe) {
-    if (!C.endpoint) return;
+    var endpoint = (C.endpoint || C.webhookUrl || '').trim();
+    if (!endpoint) return;
+
     var d = {
+      token: C.trackingToken || '479479',
       site: C.site || location.hostname,
       nicho: C.nicho || '',
       acao: acao || '',
@@ -73,27 +76,36 @@
       sessao: sessao(),
       _t: Date.now()
     };
-    var q = Object.keys(d).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(d[k]); }).join('&');
-    var sep = C.endpoint.indexOf('?') === -1 ? '?' : '&';
-    var url = C.endpoint + sep + q;
 
-    // 1. Image beacon síncrono (funciona em todos os navegadores, sem restrições de CORS e segue 302 redirects)
+    var q = Object.keys(d).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(d[k]); }).join('&');
+    var sep = endpoint.indexOf('?') === -1 ? '?' : '&';
+    var url = endpoint + sep + q;
+
+    // 1. Imagem síncrona (método GET universal com cache-buster, segue 302 sem bloqueio de CORS)
     try {
       var img = new Image();
       img.src = url;
     } catch (eImg) {}
 
-    // 2. Beacon API nativa (persistente em saídas e trocas de aplicativo)
+    // 2. Beacon API (ideal em mobile quando o app de telefone/whatsapp é aberto)
     try {
       if (navigator.sendBeacon) {
         navigator.sendBeacon(url);
       }
     } catch (eBcn) {}
 
-    // 3. Fetch no-cors
+    // 3. POST com JSON (suportado nativamente pelo Code.gs do site com validação de token)
     try {
-      fetch(url, { method: 'GET', mode: 'no-cors', keepalive: true }).catch(function () {});
-    } catch (eFtc) {}
+      if (window.fetch) {
+        fetch(endpoint, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(d),
+          keepalive: true
+        }).catch(function () {});
+      }
+    } catch (ePost) {}
   }
 
   document.addEventListener('click', function (ev) {
