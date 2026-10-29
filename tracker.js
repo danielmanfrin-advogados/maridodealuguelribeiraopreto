@@ -9,7 +9,8 @@
     if (acao === 'whatsapp') {
       var msg = a.getAttribute('data-msg') || C.mensagem || '';
       a.href = 'https://wa.me/' + so(C.whatsapp) + '?text=' + encodeURIComponent(msg);
-      a.target = '_blank'; a.rel = 'noopener';
+      a.target = '_blank';
+      a.rel = 'noopener';
     } else if (acao === 'ligar') {
       a.href = 'tel:+' + so(C.telefone);
     }
@@ -51,8 +52,10 @@
     var d = {
       site: C.site || location.hostname,
       nicho: C.nicho || '',
-      acao: acao,
+      acao: acao || '',
+      botao: acao || '',
       local: local || '',
+      posicao: local || '',
       pagina: location.pathname,
       titulo: document.title,
       origem: document.referrer || '',
@@ -61,19 +64,36 @@
       utm_campaign: param('utm_campaign'),
       utm_term: param('utm_term'),
       gclid: param('gclid') ? 'sim' : '',
+      anuncio: param('gclid') ? 'sim' : 'não',
       dispositivo: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'celular' : 'computador',
-      tela: screen.width + 'x' + screen.height,
+      tela: (window.screen ? screen.width + 'x' + screen.height : ''),
       idioma: navigator.language || '',
       detalhe: detalhe || '',
-      sessao: sessao()
+      mensagem: detalhe || '',
+      sessao: sessao(),
+      _t: Date.now()
     };
-    var q = Object.keys(d).map(function (k) { return k + '=' + encodeURIComponent(d[k]); }).join('&');
-    var url = C.endpoint + '?' + q;
+    var q = Object.keys(d).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(d[k]); }).join('&');
+    var sep = C.endpoint.indexOf('?') === -1 ? '?' : '&';
+    var url = C.endpoint + sep + q;
+
+    // 1. Image beacon síncrono (funciona em todos os navegadores, sem restrições de CORS e segue 302 redirects)
     try {
-      fetch(url, { method: 'GET', mode: 'no-cors', keepalive: true });
-    } catch (e) {
-      try { new Image().src = url; } catch (e2) {}
-    }
+      var img = new Image();
+      img.src = url;
+    } catch (eImg) {}
+
+    // 2. Beacon API nativa (persistente em saídas e trocas de aplicativo)
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(url);
+      }
+    } catch (eBcn) {}
+
+    // 3. Fetch no-cors
+    try {
+      fetch(url, { method: 'GET', mode: 'no-cors', keepalive: true }).catch(function () {});
+    } catch (eFtc) {}
   }
 
   document.addEventListener('click', function (ev) {

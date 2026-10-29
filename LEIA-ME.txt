@@ -63,14 +63,28 @@ Os prompts originais utilizados estão registrados no arquivo img/PROMPTS.txt.
 ----------------------------------------------------------------------
 4. INDEXAÇÃO NO GOOGLE SEARCH CONSOLE E SITEMAP
 ----------------------------------------------------------------------
+O arquivo de verificação do Google Search Console já está configurado na raiz:
+- Arquivo: googledeb63b46b132aa54.html
+- Meta tag: <meta name="google-site-verification" content="googledeb63b46b132aa54"> (inserida no <head> da página inicial).
+
+Para verificar sua propriedade:
 1. Acesse o Google Search Console (https://search.google.com/search-console).
-2. Adicione a propriedade com o domínio do seu site (ex.: https://maridodealuguelribeiraopreto.vercel.app/).
-3. No menu lateral, acerte a verificação e clique em "Sitemaps".
-4. Digite "sitemap.xml" no campo de envio e clique em Enviar.
-5. O Google indexará todas as 13 páginas (página inicial, 3 serviços, 6 bairros e institucionais).
+2. Adicione a propriedade com o domínio do seu site (https://maridodealuguelribeiraopreto.vercel.app/).
+3. A verificação por "Upload de arquivo HTML" ou "Tag HTML" será confirmada imediatamente.
+4. No menu lateral, clique em "Sitemaps", digite "sitemap.xml" no campo de envio e clique em Enviar.
 
 ----------------------------------------------------------------------
-5. GOOGLE MEU NEGÓCIO (PERFIL DA EMPRESA NO GOOGLE)
+5. REGISTRO DE CLIQUES E TRACKER
+----------------------------------------------------------------------
+O tracker.js foi aprimorado com multi-canal de disparo:
+- Imagem de beacon síncrona com cache-buster (segue redirects 302 do Google sem bloqueio de CORS);
+- navigator.sendBeacon para envios em segundo plano;
+- fetch assíncrono como redundância.
+Certifique-se de que a implantação do Apps Script na planilha esteja configurada com
+acesso para "Qualquer pessoa" (Anyone), permitindo que os cliques sejam gravados.
+
+----------------------------------------------------------------------
+6. GOOGLE MEU NEGÓCIO (PERFIL DA EMPRESA NO GOOGLE)
 ----------------------------------------------------------------------
 Quando houver um prestador com endereço comercial ou ponto de atendimento em
 Ribeirão Preto, crie um perfil no Google Meu Negócio:
