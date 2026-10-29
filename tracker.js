@@ -47,9 +47,16 @@
     try { return new URLSearchParams(location.search).get(nome) || ''; } catch (e) { return ''; }
   }
 
+  var ultimoClique = 0;
+
   function registrar(acao, local, detalhe) {
     var endpoint = (C.endpoint || C.webhookUrl || '').trim();
     if (!endpoint) return;
+
+    // Evita registros duplicados de cliques repetidos em menos de 1 segundo
+    var agora = Date.now();
+    if (agora - ultimoClique < 1000) return;
+    ultimoClique = agora;
 
     var d = {
       token: C.trackingToken || '479479',
@@ -74,38 +81,24 @@
       detalhe: detalhe || '',
       mensagem: detalhe || '',
       sessao: sessao(),
-      _t: Date.now()
+      _t: agora
     };
 
     var q = Object.keys(d).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(d[k]); }).join('&');
     var sep = endpoint.indexOf('?') === -1 ? '?' : '&';
     var url = endpoint + sep + q;
 
-    // 1. Imagem síncrona (método GET universal com cache-buster, segue 302 sem bloqueio de CORS)
+    // Dispara exatamente uma única requisição por clique
     try {
       var img = new Image();
       img.src = url;
-    } catch (eImg) {}
-
-    // 2. Beacon API (ideal em mobile quando o app de telefone/whatsapp é aberto)
-    try {
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon(url);
-      }
-    } catch (eBcn) {}
-
-    // 3. POST com JSON (suportado nativamente pelo Code.gs do site com validação de token)
-    try {
-      if (window.fetch) {
-        fetch(endpoint, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'text/plain' },
-          body: JSON.stringify(d),
-          keepalive: true
-        }).catch(function () {});
-      }
-    } catch (ePost) {}
+    } catch (e) {
+      try {
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(url);
+        }
+      } catch (e2) {}
+    }
   }
 
   document.addEventListener('click', function (ev) {
